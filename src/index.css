@@ -1,0 +1,374 @@
+:root {
+  --primary: #c8102e; /* Deep red matching the reference */
+  --primary-hover: #b00000;
+  --secondary: #333333;
+  --bg: #1e1e1e;
+  --bg-nav: #121212;
+  --bg-card: #222426;
+  --text-main: #f0f0f0;
+  --text-muted: #a0a0a0;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: var(--bg-nav);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff4d4d; /* Bright red logo */
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-left: 2rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: var(--white);
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-nav);
+  color: var(--text-muted);
+  padding: 3rem 5% 1rem;
+  margin-top: 4rem;
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.footer-section p {
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--white);
+}
+
+.oss-badge {
+  margin-top: 1.5rem;
+}
+
+.badge {
+  background: #333;
+  color: #ff4d4d;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: 1px solid #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.badge:hover {
+  background: #ff4d4d;
+  color: #121212;
+}
+
+.dev-list {
+  list-style: none;
+}
+
+.dev-list li {
+  font-size: 0.9rem;
+}
+
+.about-dev-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.about-dev-list li {
+  margin-bottom: 0.5rem;
+}
+
+.about-dev-list li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.about-dev-list li a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Pages */
+.page-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.page-container h1 {
+  margin-bottom: 2rem;
+  color: var(--white);
+  font-size: 2.5rem;
+}
+
+.page-container h2 {
+  margin: 2rem 0 1rem;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.page-container p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+.page-container section {
+  margin-bottom: 2.5rem;
+}
+
+/* Home Page */
+.hero {
+  text-align: center;
+  padding: 8rem 5%;
+  background: linear-gradient(to right, #181818 0%, #4a0505 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: #444;
+}
+
+/* Features */
+.features {
+  padding: 4rem 5%;
+  background: var(--bg);
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--white);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  padding: 2.5rem 1.5rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Screenshots */
+.screenshots {
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.screenshots h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--white);
+}
+
+.screenshots h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.screenshot-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+  border: 1px solid #333;
+}
+
+.screenshot-item img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
